@@ -4,20 +4,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import webdev.weyrich.finalProject.repository.UserRepository;
+import webdev.weyrich.finalProject.repository.CredentialRepository;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+public class CredentialController {
 
-    private final UserRepository userRepository;
+    private final CredentialRepository credentialRepository;
 
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public CredentialController(CredentialRepository credentialRepository) {
+        this.credentialRepository = credentialRepository;
     }
 
-    @GetMapping
-    public ResponseEntity getAllUsers() {
-        return ResponseEntity.ok(this.userRepository.findAll());
-    }
 }
